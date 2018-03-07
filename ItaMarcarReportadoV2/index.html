@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ItaMarcarReportadoV1</title>
+	<title>ItaMarcarReportadoV2</title>
 		<meta charset="utf-8">		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
@@ -42,6 +42,7 @@
 				<option value="">Tipo</option>
 				<option value="MC">Marcar Cubo</option>
 				<option value="MOC">Marcar Orden Compra</option>
+                <option value="CAC">Consultar ACTIVO</option>
 			</select>
 		</li>
 		<li>
@@ -171,7 +172,7 @@
 </div>
 
 <div data-role="page" id="MenuCatalogos">
-<div data-role="header"><h2>ItaMarcarReportadoV1</h2></div>
+<div data-role="header"><h2>ItaMarcarReportadoV2</h2></div>
 <div data-role="main" class="ui-content">
     <div id="imagenita">
     <img src="Imagenes\01.jpg" width=70px>
@@ -265,7 +266,7 @@
 </div>
 
 <div data-role="page" id="RemotaALocal">
-                 <div data-role="header"><h1>ItaMarcarReportadoV1</h1></div>
+                 <div data-role="header"><h1>ItaMarcarReportadoV2</h1></div>
                  <div data-role="main" class="ui-content">
                <table>
                  <tr>
@@ -296,6 +297,74 @@
                             </div><!-- /navbar -->
                        </div>
             </div>
+<!-- Consulta Activos -->
+<div data-role="page" id="MuestraInformacion_de_activos">
+    <div data-role="header"><h3>Consulta de activos</h3></div>
+    <div data-role="main" class="ui-content">
+    <div id="imagenita">
+    <img src="Imagenes\01.jpg" width=70px>
+    </div>
+                                
+                                <div class="centrado">
+                                <input type="number" class="entrada_texto" id="txt_no_activo" placeholder="# Activo" value="">
+                                </div>
+                               
+                                
+<br>
+ <a id="btnleercodigo" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Leer C.B</a>
+ <a id="ConsultarACTIVO" href="#" class="ui-btn ui-icon-search ui-btn-icon-left">Consultar ACTIVO</a>
+                                
+
+          <table data-role="table" class="ui-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th></th>                                   
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>                                                                  
+                                                <td>No. ACTIVO: <span class="Informacion" id="pNO_ACTIVO"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Desc. Activo: <span class="Informacion" id="pPART_DESC"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Marca: <span class="Informacion" id="pLI_MARCA"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Modelo: <span class="Informacion" id="pLI_MODELO"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>No. Serie: <span class="Informacion" id="pLI_SERIE"></span></td>
+                                            </tr>                                           
+                                            <tr>                                                                  
+                                                <td>Departamento: <span class="Informacion" id="pIP_NOMBRE_DTO"></span></td>
+                                           </tr>
+                                            <tr>                                                                  
+                                                <td>No. empleado: <span class="Informacion" id="pNUMERO_EMPLEADO"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Nombre empleado: <span class="Informacion" id="pIP_NOMBRE_EMPLEADO"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Puesto: <span class="Informacion" id="pIP_NOMBRE_PTO"></span></td>
+                                            </tr>
+                                            <tr>                                                                  
+                                                <td>Fecha asugnación: <span class="Informacion" id="pFECHA"></span></td>
+                                            </tr>                                
+                                        </tbody>
+                                  </table>
+
+    </div>
+    <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                                <ul>
+                                   <li><a href="#login">CERRAR SESION</a></li> </ul>
+                            </div><!-- /navbar -->
+                       </div>
+</div>
+<!-- Consulta Activos -->
+
 
 
 
