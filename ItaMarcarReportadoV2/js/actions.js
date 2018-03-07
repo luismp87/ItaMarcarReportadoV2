@@ -26,6 +26,7 @@ var fn = {
         //PARA MOVIL
         $('#btnautentificar').tap(fn.autentificarSQL);
         ////////////
+         $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
         $('#CerrarSesion').tap(fn.cerrarsesion);
 		$('#CSOC').tap(fn.cerrarsesion);
         $('#ConsultarCUBO').tap(fn.ConsultarCUBO);
@@ -93,6 +94,18 @@ var fn = {
 		$('#txtTipo').val("");
 		window.location.href = '#login'
 		location.reload();
+    },
+        leerCodigoDeBarras: function(){
+        cordova.plugins.barcodeScanner.scan(
+          function (result) {             
+                             //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
+                            $("#txt_no_activo").val("" + result.text); 
+          }, 
+          function (error) {
+              navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
+              //alert("Scanning failed: " + error);
+          }
+       );
     },	
 	ConsultarOrdenCompra: function(){
 		var digitado = $('#txtOC').val();
