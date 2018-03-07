@@ -28,6 +28,7 @@
 		<gap:plugin name="cordova-plugin-dialogs" source="npm" />
 		<gap:plugin name="cordova-plugin-vibration" source="npm" />
 		<gap:plugin name="cordova-plugin-network-information" source="npm" />
+		<plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~6.0.1">
 	    <access origin="*" />
         <allow-intent href="*" />
         <allow-navigation href="*" />
