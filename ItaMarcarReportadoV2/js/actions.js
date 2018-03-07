@@ -27,6 +27,8 @@ var fn = {
         $('#btnautentificar').tap(fn.autentificarSQL);
         ////////////
          $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
+         $('#ConsultarACTIVO').tap(fn.ConsultarACTIVO);
+         
         $('#CerrarSesion').tap(fn.cerrarsesion);
 		$('#CSOC').tap(fn.cerrarsesion);
         $('#ConsultarCUBO').tap(fn.ConsultarCUBO);
@@ -241,6 +243,67 @@ var fn = {
 
                             }
                         else if(msg[i].Respuesta == "noencontro")
+                            {
+                            //alert("No se encontro información del CUBO en la base de datos.");///*PARAWEB
+                            navigator.notification.alert("No se encontro información del CUBO en la base de datos." ,null,"No Existe en la Base de datos.","Aceptar");///*PARAMOVIL
+
+                            }                        
+                    });                 
+                },
+                error: function(jq, txt){
+                    $.mobile.loading("hide");
+                    //alert("Verifique su conexion Celular ó Wifi " + jq + txt.responseText);///*PARAWEB
+                    navigator.notification.alert("Verifique su conexion Celular ó Wifi " + jq + txt.responseText,null,"Error al consultar CUBO","Aceptar");///*PARAMOVIL
+                }
+            });
+        }
+        else{
+            navigator.notification.alert("El CUBO es Requeridos",null,"Error al consultar CUBO","Aceptar");///*PARAMOVIL
+            //alert("El CUBO es Requeridos");///*PARAWEB
+        }  
+    },
+            ConsultarACTIVO: function(){    
+
+        var no_activo = $('#txt_no_activo').val();   
+
+        if(no_activo != ''){ 
+         
+            $.mobile.loading("show",{theme: 'b'});
+            $.ajax({
+                method: 'POST',
+                url: 'http://servidoriis.laitaliana.com.mx/lm/ws_consulta_activos/activos.asmx/Consulta_por_no_activo',              
+                data: {no_activo: no_activo},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    //$("#btnCMARCAR_PK").text("");
+                    $.each(msg,function(i,item){
+                        
+                        if(msg[i].Respuesta == "Encontrado")
+                            {      
+               
+                                               
+                                $("#pNO_ACTIVO").text(msg[i].no_activo);
+                                $("#pPART_DESC").text(msg[i].part_desc);
+                                $("#pLI_MARCA").text(msg[i].li_marca);
+                                $("#pLI_MODELO").text(msg[i].li_modelo);
+                                $("#pLI_SERIE").text(msg[i].li_serie);
+                                $("#pIP_NOMBRE_DTO").text(msg[i].ip_nombre_dto);
+                                $("#pNUMERO_EMPLEADO").text(msg[i].numero_empleado);
+                                $("#pIP_NOMBRE_EMPLEADO").text(msg[i].ip_nombre_empleado);
+                                $("#pIP_NOMBRE_PTO").text(msg[i].ip_nombre_pto);
+                                $("#pFECHA").text(msg[i].fecha);
+                                
+                                //$("#hCORIGENUSUARIO").text(window.localStorage.getItem("origen"));
+                                //$("#hCNPROVEEDOR").text(msg[i].vendor_name);
+                                //$("#hCPLACA").text(msg[i].tm_vehicle_id);
+                                //$("#hCDESCRIPCIONCUBO").text(msg[i].description);
+
+                                //$("#btnCMARCAR_PK").append((i+1) + ".- "+msg[i].ANDEN_FISICO + "<BR>");
+                            
+
+                            }
+                        else if(msg[i].Respuesta == "No_encontrado")
                             {
                             //alert("No se encontro información del CUBO en la base de datos.");///*PARAWEB
                             navigator.notification.alert("No se encontro información del CUBO en la base de datos." ,null,"No Existe en la Base de datos.","Aceptar");///*PARAMOVIL
