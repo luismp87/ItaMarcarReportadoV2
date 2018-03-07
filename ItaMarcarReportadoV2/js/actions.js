@@ -28,6 +28,8 @@ var fn = {
         ////////////
          $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
          $('#ConsultarACTIVO').tap(fn.ConsultarACTIVO);
+        $('#btnLimpiaCamposActivo').tap(fn.btnLimpiaCamposActivo);
+         
          
         $('#CerrarSesion').tap(fn.cerrarsesion);
 		$('#CSOC').tap(fn.cerrarsesion);
@@ -102,6 +104,7 @@ var fn = {
           function (result) {             
                              //***navigator.notification.alert("Resultado: " + result.text,null,"Felicidades","Aceptar");
                             $("#txt_no_activo").val("" + result.text); 
+                            ConsultarACTIVO();
           }, 
           function (error) {
               navigator.notification.alert("Scanning failed: " + error,null,"Error","Aceptar");
@@ -306,7 +309,7 @@ var fn = {
                         else if(msg[i].Respuesta == "No_encontrado")
                             {
                             //alert("No se encontro información del CUBO en la base de datos.");///*PARAWEB
-                            navigator.notification.alert("No se encontro información del CUBO en la base de datos." ,null,"No Existe en la Base de datos.","Aceptar");///*PARAMOVIL
+                            navigator.notification.alert("No se encontro información del ACTIVO en la base de datos." ,null,"No Existe en la Base de datos.","Aceptar");///*PARAMOVIL
 
                             }                        
                     });                 
@@ -314,14 +317,28 @@ var fn = {
                 error: function(jq, txt){
                     $.mobile.loading("hide");
                     //alert("Verifique su conexion Celular ó Wifi " + jq + txt.responseText);///*PARAWEB
-                    navigator.notification.alert("Verifique su conexion Celular ó Wifi " + jq + txt.responseText,null,"Error al consultar CUBO","Aceptar");///*PARAMOVIL
+                    navigator.notification.alert("Verifique su conexion Celular ó Wifi " + jq + txt.responseText,null,"Error al consultar ACTIVO","Aceptar");///*PARAMOVIL
                 }
             });
         }
         else{
-            navigator.notification.alert("El CUBO es Requeridos",null,"Error al consultar CUBO","Aceptar");///*PARAMOVIL
+            navigator.notification.alert("El ACTIVO es Requeridos",null,"Error al consultar ACTIVO","Aceptar");///*PARAMOVIL
             //alert("El CUBO es Requeridos");///*PARAWEB
         }  
+    },
+    btnLimpiaCamposActivo: function(){
+                                $('#txt_no_activo').val("");
+                                $("#pNO_ACTIVO").text("");
+                                $("#pPART_DESC").text("");
+                                $("#pLI_MARCA").text("");
+                                $("#pLI_MODELO").text("");
+                                $("#pLI_SERIE").text("");
+                                $("#pIP_NOMBRE_DTO").text("");
+                                $("#pNUMERO_EMPLEADO").text("");
+                                $("#pIP_NOMBRE_EMPLEADO").text("");
+                                $("#pIP_NOMBRE_PTO").text("");
+                                $("#pFECHA").text("");
+
     },
     ConsultaNumUsuarios: function(){      
         almacen.leerNumeroUsuarios();     
