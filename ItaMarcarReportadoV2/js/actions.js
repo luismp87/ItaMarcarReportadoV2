@@ -126,6 +126,7 @@ var fn = {
                
                                                
                                 $("#pNO_ACTIVO").text(msg[i].no_activo);
+                                $("#pNOMBRE_RESPONSABLE").text(msg[i].nombre_responsable);
                                 $("#pPART_DESC").text(msg[i].part_desc);
                                 $("#pLI_MARCA").text(msg[i].li_marca);
                                 $("#pLI_MODELO").text(msg[i].li_modelo);
