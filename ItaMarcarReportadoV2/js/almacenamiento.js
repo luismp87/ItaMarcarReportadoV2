@@ -123,11 +123,16 @@ var almacen = {
 		$("#txtcubo").val("");
  		window.location.href = '#IngresoCubo';
 		}
-		else{
+		else if(t == "MOC"){
 			window.localStorage.setItem("user",usuariof);
 			window.localStorage.setItem("origen",origenf);
 			$("#lblorigenOC").text("" + window.localStorage.getItem("origen"));
 			window.location.href = '#OC';
+		}	
+		else if(t == "CAC"){
+			window.localStorage.setItem("user",usuariof);
+			window.localStorage.setItem("origen",origenf);			
+			window.location.href = '#MuestraInformacion_de_activos';
 		}	
 	}
 //navigator.notification.alert("almacen.numerodefilas: " + almacen.numerodefilas, null, "Correcto", "Aceptar");
