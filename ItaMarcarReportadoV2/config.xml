@@ -32,7 +32,7 @@
 		<plugin name="cordova-plugin-vibration" spec="3.0.1" />
 		<!--<gap:plugin name="cordova-plugin-network-information" source="npm" />-->
 		<plugin name="cordova-plugin-network-information" spec="2.0.1" />
-		<plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~6.0.1">
+		<plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~6.0.1"/>
 	    <param name="CAMERA_USAGE_DESCRIPTION" value="To scan barcodes." />
 	    <access origin="*" />
         <allow-intent href="*" />
