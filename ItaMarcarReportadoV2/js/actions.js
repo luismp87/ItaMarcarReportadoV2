@@ -345,8 +345,7 @@ var fn = {
                     $.each(msg,function(i,item){
                         
                         if(msg[i].Respuesta == "Encontrado")
-                            {      
-               
+                            {                     
                                                
                                 $("#pNO_ACTIVO").text(msg[i].no_activo);
                                 $("#pNOMBRE_RESPONSABLE").text(msg[i].nombre_responsable);
