@@ -392,10 +392,12 @@ var fn = {
     btnLimpiaCamposActivo: function(){
                                 $('#txt_no_activo').val("");
                                 $("#pNO_ACTIVO").text("");
+                                $("#pNOMBRE_RESPONSABLE").text("");
                                 $("#pPART_DESC").text("");
                                 $("#pLI_MARCA").text("");
                                 $("#pLI_MODELO").text("");
                                 $("#pLI_SERIE").text("");
+                                $("#pOBSERVACIONES").text("");
                                 $("#pIP_NOMBRE_DTO").text("");
                                 $("#pNUMERO_EMPLEADO").text("");
                                 $("#pIP_NOMBRE_EMPLEADO").text("");
