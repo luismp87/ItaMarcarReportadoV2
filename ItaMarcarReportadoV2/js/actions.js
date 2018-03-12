@@ -132,6 +132,7 @@ var fn = {
                                 $("#pLI_MODELO").text(msg[i].li_modelo);
                                 $("#pLI_SERIE").text(msg[i].li_serie);                                
                                 $("#pOBSERVACIONES").text(msg[i].observaciones);
+                                $("#pIP_NOMBRE_CIA").text(msg[i].ip_nombre_cia);
                                 $("#pIP_NOMBRE_DTO").text(msg[i].ip_nombre_dto);
                                 $("#pNUMERO_EMPLEADO").text(msg[i].numero_empleado);
                                 $("#pIP_NOMBRE_EMPLEADO").text(msg[i].ip_nombre_empleado);
@@ -354,6 +355,7 @@ var fn = {
                                 $("#pLI_MODELO").text(msg[i].li_modelo);
                                 $("#pLI_SERIE").text(msg[i].li_serie);
                                 $("#pOBSERVACIONES").text(msg[i].observaciones);
+                                $("#pIP_NOMBRE_CIA").text(msg[i].ip_nombre_cia);
                                 $("#pIP_NOMBRE_DTO").text(msg[i].ip_nombre_dto);
                                 $("#pNUMERO_EMPLEADO").text(msg[i].numero_empleado);
                                 $("#pIP_NOMBRE_EMPLEADO").text(msg[i].ip_nombre_empleado);
@@ -398,6 +400,7 @@ var fn = {
                                 $("#pLI_MODELO").text("");
                                 $("#pLI_SERIE").text("");
                                 $("#pOBSERVACIONES").text("");
+                                $("#pIP_NOMBRE_CIA").text("");
                                 $("#pIP_NOMBRE_DTO").text("");
                                 $("#pNUMERO_EMPLEADO").text("");
                                 $("#pIP_NOMBRE_EMPLEADO").text("");
