@@ -244,7 +244,12 @@ var fn = {
                             {
                                 //alert("El STATUS del cubo no es programado, se aborta la operacion."); ///*PARAWEB
                                 navigator.notification.alert("El STATUS del cubo no es programado, se aborta la operacion.",null,"Status del CUBO incorrecto.","Aceptar");///*PARAMOVIL
-                            }                            
+                            }
+                            if((msg[i].tm_vehicle_id == " ") || (msg[i].tm_vehicle_id == ""))
+                            {
+                                //alert("El STATUS del cubo no es programado, se aborta la operacion."); ///*PARAWEB
+                                navigator.notification.alert("El cubo no tiene placa, favor de verificarlo con el área de TRAFICO.",null,"CUBO sin placa.","Aceptar");///*PARAMOVIL
+                            }                                
                             else
                             {                 
                                 window.location.href = '#MuestraInfoCubo';
