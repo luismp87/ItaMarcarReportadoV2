@@ -457,8 +457,8 @@ var fn = {
             almacen.leerNumeroUsuarios();  
     },
     autentificarSQL: function(){
-        var usu = $('#txtusuario').val();      
-        var con = $('#txtcontrasena').val(); 
+        var usu = $('#txtusuario').val().toLowerCase();      
+        var con = $('#txtcontrasena').val().toLowerCase(); 
 		var tip = $('#txtTipo').val();
         if((usu != '') && (con != '') && (tip != '')){  
             $.mobile.loading("show",{theme: 'b'});

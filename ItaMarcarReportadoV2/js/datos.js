@@ -6,5 +6,6 @@ var usuarios = [
 {"usuario": "vsanta","pass": "vsanta","origen": "P_SANTA_ANITA"},
 {"usuario": "vmoder","pass": "vmoder","origen": "MODERNA"},
 {"usuario": "vbanex","pass": "vbanex","origen": "BANEXA"},
-{"usuario": "vsblas","pass": "vsblas","origen": "SBLAS_30PNT"}
+{"usuario": "vsblas","pass": "vsblas","origen": "SBLAS_30PNT"},
+{"usuario": "valiano","pass": "valiano","origen": "ALIANO"}
 ];
