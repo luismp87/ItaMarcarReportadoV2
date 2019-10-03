@@ -243,7 +243,7 @@ var fn = {
                             if(msg[i].status != "P")
                             {
                                 //alert("El STATUS del cubo no es programado, se aborta la operacion."); ///*PARAWEB
-                                navigator.notification.alert("El STATUS del cubo no es programado, se aborta la operacion.",null,"Status del CUBO incorrecto.","Aceptar");///*PARAMOVIL
+                                navigator.notification.alert("El STATUS del cubo no es programado, se aborta la operación.",null,"Status del CUBO incorrecto.","Aceptar");///*PARAMOVIL
                                 return;
                             }
                             if((msg[i].tm_vehicle_id == " ") || (msg[i].tm_vehicle_id == ""))
