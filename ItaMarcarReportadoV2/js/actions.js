@@ -551,7 +551,7 @@ var fn = {
         var usuario = window.localStorage.getItem("user");
         var origen = window.localStorage.getItem("origen");
         var version = "2.6";
-        var sf_origen = "AND";
+        var sf_origen = "ANDROID";
 
 
                 $.mobile.loading("show",{theme: 'b'});
