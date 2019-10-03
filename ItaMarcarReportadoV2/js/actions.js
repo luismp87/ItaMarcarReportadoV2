@@ -550,13 +550,15 @@ var fn = {
         var cubo = $('#hFOLIOCUBO').text();  
         var usuario = window.localStorage.getItem("user");
         var origen = window.localStorage.getItem("origen");
+        var version = "2.6";
+        var sf_origen = "AND";
 
 
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitamarcarunidades/Service1.asmx/GuardaReporte',              
-                data: {cubo: cubo, usuario: usuario, origen: origen},
+                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitamarcarunidades/Service1.asmx/GuardaReporte_mas_version',              
+                data: {cubo: cubo, usuario: usuario, origen: origen,version: version, sf_origen: sf_origen},
                 dataType: "json",
                 success: function (msg){
                     $.mobile.loading("hide");
