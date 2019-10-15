@@ -251,7 +251,13 @@ var fn = {
                                 //alert("El STATUS del cubo no es programado, se aborta la operacion."); ///*PARAWEB
                                 navigator.notification.alert("El cubo no tiene placa, favor de verificarlo con el área de TRAFICO.",null,"CUBO sin placa.","Aceptar");///*PARAMOVIL
                                 return;
-                            }                                
+                            }
+                            if((msg[i].MENSAJE_DESDE_WS != ""))
+                            {
+                                alert(msg[i].MENSAJE_DESDE_WS + "."); ///*PARAWEB
+                                //navigator.notification.alert("El cubo no tiene placa, favor de verificarlo con el área de TRAFICO.",null,"CUBO sin placa.","Aceptar");///*PARAMOVIL                                
+                             return;
+                            }                                         
                             else
                             {                 
                                 window.location.href = '#MuestraInfoCubo';
