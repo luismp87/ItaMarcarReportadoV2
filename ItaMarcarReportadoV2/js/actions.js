@@ -229,7 +229,7 @@ var fn = {
             $.mobile.loading("show",{theme: 'b'});
             $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitamarcarunidades/Service1.asmx/MuestraInfoCubo',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitamarcarunidades/service1.asmx/MuestraInfoCubo',              
                 data: {cubo: cubo, origen: origen},
                 dataType: "json",
                 success: function (msg){
@@ -299,7 +299,7 @@ var fn = {
             $.mobile.loading("show",{theme: 'b'});
             $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitamarcarunidades/Service1.asmx/MuestraInfoCuboV2',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitamarcarunidades/service1.asmx/MuestraInfoCuboV2',              
                 data: {cubo: cubo},
                 dataType: "json",
                 success: function (msg){
@@ -436,7 +436,7 @@ var fn = {
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitamarcarunidades/Service1.asmx/enviarcatalogocompletodeusuarios',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitamarcarunidades/service1.asmx/enviarcatalogocompletodeusuarios',              
                 //data: {usuario: nom, contrasena: passw},
                 dataType: "json",
                 success: function (msg){
@@ -563,7 +563,7 @@ var fn = {
                 $.mobile.loading("show",{theme: 'b'});
                 $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/LM/wsitamarcarunidades/Service1.asmx/GuardaReporte_mas_version',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitamarcarunidades/service1.asmx/GuardaReporte_mas_version',              
                 data: {cubo: cubo, usuario: usuario, origen: origen,version: version, sf_origen: sf_origen},
                 dataType: "json",
                 success: function (msg){
