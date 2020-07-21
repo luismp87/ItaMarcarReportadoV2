@@ -113,7 +113,7 @@ var fn = {
             $.mobile.loading("show",{theme: 'b'});
             $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/lm/ws_consulta_activos/activos.asmx/Consulta_por_no_activo',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/ws_consulta_activos/activos.asmx/Consulta_por_no_activo',              
                 data: {no_activo: no_activo},
                 dataType: "json",
                 success: function (msg){
@@ -350,7 +350,7 @@ var fn = {
             $.mobile.loading("show",{theme: 'b'});
             $.ajax({
                 method: 'POST',
-                url: 'http://servidoriis.laitaliana.com.mx/lm/ws_consulta_activos/activos.asmx/Consulta_por_no_activo',              
+                url: 'https://wsgili.laitaliana.com.mx:8081/ws_consulta_activos/activos.asmx/Consulta_por_no_activo',              
                 data: {no_activo: no_activo},
                 dataType: "json",
                 success: function (msg){
