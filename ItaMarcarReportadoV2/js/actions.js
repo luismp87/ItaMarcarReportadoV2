@@ -47,7 +47,7 @@ var fn = {
 		$("#MarcaOC").tap(fn.MarcarOC);       
         
         //PARA MOVIL
-        document.addEventListener("online", fn.btnMigrarUsuarios(), false);
+        //document.addEventListener("online", fn.btnMigrarUsuarios(), false);
         ////////////
  
 	},
@@ -90,7 +90,7 @@ var fn = {
         else
         {
             //orlando aqui tenia false sepa porque
-            return false;
+            return true;
         }
     },
     cerrarsesion: function(){
@@ -472,11 +472,7 @@ var fn = {
     },
     autentificarSERVER: function(){   
 
-if($('#origen').val() == "")
-{
-    navigator.notification.alert("Seleccione un origen",null,"Seleccione un origen","Aceptar");
-    return;
-}
+
 
         var nom = $('#txtusuario').val().toLowerCase();
         var passw = $('#txtcontrasena').val();
