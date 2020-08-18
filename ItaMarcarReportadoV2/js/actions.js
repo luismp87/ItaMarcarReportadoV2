@@ -4,10 +4,10 @@ var fn = {
 	},
 	init: function(){           
         //PARA MOVIL
-        if(window.localStorage.getItem("yamigrousuarios") != "SI")
-        {          
-        fn.btnMigrarUsuarios();  
-        }
+        //if(window.localStorage.getItem("yamigrousuarios") != "SI")
+        //{          
+        //fn.btnMigrarUsuarios();  
+        //}
         ////////////
  
         if(fn.estaRegistrado() == false)
@@ -24,7 +24,8 @@ var fn = {
         //$('#btnautentificar').tap(fn.autentificarJSON);
         ////////////
         //PARA MOVIL
-        $('#btnautentificar').tap(fn.autentificarSQL);
+        //$('#btnautentificar').tap(fn.autentificarSQL);
+        $('#btnautentificar').tap(fn.autentificarSERVER); 
         ////////////
          $('#btnleercodigo').tap(fn.leerCodigoDeBarras);
          $('#ConsultarACTIVO').tap(fn.ConsultarACTIVO);
@@ -468,6 +469,80 @@ var fn = {
     btnEliminarUsuarios: function(){        
             almacen.eliminarUsuarios();
             almacen.leerNumeroUsuarios();  
+    },
+    autentificarSERVER: function(){   
+
+if($('#origen').val() == "")
+{
+    navigator.notification.alert("Seleccione un origen",null,"Seleccione un origen","Aceptar");
+    return;
+}
+
+        var nom = $('#txtusuario').val().toLowerCase();
+        var passw = $('#txtcontrasena').val();
+        if(nom != '' && passw != ''){   
+            $.mobile.loading("show",{theme: 'b'});
+            $.ajax({
+                method: 'POST',
+                url: 'https://wsgili.laitaliana.com.mx:8081/wsitamarcarunidades/service1.asmx/autentificar',              
+                data: {usuario: nom, contrasena: passw},
+                dataType: "json",
+                success: function (msg){
+                    $.mobile.loading("hide");
+                    $.each(msg,function(i,item){
+                        if(msg[i].valor1 == "correcto")
+                            {   
+                                                                         
+
+        var t = $('#txtTipo').val();
+        if(t == "MC"){
+        window.localStorage.setItem("user",msg[i].valor2);
+        window.localStorage.setItem("origen",msg[i].valor3);
+        $("#lblorigenactual").text("Tu Ubicación: " + window.localStorage.getItem("origen"));
+        $("#txtcubo").val("");
+        window.location.href = '#IngresoCubo';
+        }
+        else if(t == "MOC"){
+            window.localStorage.setItem("user",msg[i].valor2);
+            window.localStorage.setItem("origen",msg[i].valor3);
+            $("#lblorigenOC").text("" + window.localStorage.getItem("origen"));
+            window.location.href = '#OC';
+        }   
+        else if(t == "CAC"){
+            window.localStorage.setItem("user",msg[i].valor2);
+            window.localStorage.setItem("origen",msg[i].valor3);          
+            window.location.href = '#MuestraInformacion_de_activos';
+        }   
+
+
+
+
+
+                            navigator.notification.alert("Usuario y contraseña autentificados:  " + msg[i].valor2,null,"","Aceptar");
+                            return;
+                            }
+                            else if(msg[i].valor2 == "El_usuario_no_es_de_VIGILANCIA")
+                            {
+                            navigator.notification.alert("El usuario no pertenece a VIGILANCIA",null,"Advertencia","Aceptar");
+                            return;                        
+                            }
+                            else
+                            {
+                            navigator.notification.alert("Usuario o contraseña incorrectos",null,"Error al Ingresar","Aceptar");   
+                            //alert("Usuario o contraseña incorrectos");
+                            }                        
+                    });                 
+                },
+                error: function(jq, txt){
+                    //alert(jq + txt.responseText);
+                    navigator.notification.alert(jq + txt.responseText,null,"Error al Ingresar","Aceptar");
+                }
+            });
+        }
+        else{
+            navigator.notification.alert("Todos Los Campos Son Requeridos",null,"Error al Ingresar","Aceptar");
+            //alert("todos los campos son requeridos");
+        }   
     },
     autentificarSQL: function(){
         var usu = $('#txtusuario').val().toLowerCase();      
